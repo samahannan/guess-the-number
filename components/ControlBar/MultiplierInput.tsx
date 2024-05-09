@@ -15,11 +15,7 @@ const MultiplierInput: FunctionComponent<MultiplierInputProps> = ({
 }) => {
   const { playerOne } = useContext(GlobalStateContext);
 
-  if (!playerOne) {
-    return;
-  }
-
-  const [value, setValue] = useState(playerOne.multiplier);
+  const [value, setValue] = useState(playerOne?.multiplier);
 
   const handleInputChange = (e: any) => {
     const newValue = Number(e.target.value);
@@ -46,6 +42,10 @@ const MultiplierInput: FunctionComponent<MultiplierInputProps> = ({
       onValueUpdate(value);
     }
   }, [value]);
+
+  if (!playerOne) {
+    return;
+  }
 
   return (
     <Card className="py-1 px-2">

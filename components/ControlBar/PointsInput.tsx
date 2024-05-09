@@ -15,11 +15,17 @@ const PointsInput: FunctionComponent<PointsPickerProps> = ({
 }) => {
   const { playerOne } = useContext(GlobalStateContext);
 
+  const [value, setValue] = useState(playerOne?.pointsPlaced);
+
+  useEffect(() => {
+    if (value) {
+      onValueUpdate(value);
+    }
+  }, [value]);
+
   if (!playerOne) {
     return;
   }
-
-  const [value, setValue] = useState(playerOne.pointsPlaced);
 
   const handleInputChange = (e: any) => {
     const newValue = Number(e.target.value);
@@ -41,12 +47,6 @@ const PointsInput: FunctionComponent<PointsPickerProps> = ({
       return Math.max(currentValue - STEP_POINTS, 0);
     });
   };
-
-  useEffect(() => {
-    if (value) {
-      onValueUpdate(value);
-    }
-  }, [value]);
 
   return (
     <Card className="py-1 px-2">
