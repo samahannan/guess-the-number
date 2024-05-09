@@ -3,7 +3,7 @@ import { FunctionComponent, useContext, useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import Card from "../Card";
-import { GlobalStateContext } from "../../app/page";
+import { GlobalStateContext } from "../Game";
 import { STEP_POINTS } from "@/lib/constants";
 
 interface PointsPickerProps {

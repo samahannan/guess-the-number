@@ -3,7 +3,7 @@ import { FunctionComponent, useContext, useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import Card from "../Card";
-import { GlobalStateContext } from "../../app/page";
+import { GlobalStateContext } from "../Game";
 import { MAX_MULTIPLIER, STEP_MULTIPLIER } from "@/lib/constants";
 
 interface MultiplierInputProps {
