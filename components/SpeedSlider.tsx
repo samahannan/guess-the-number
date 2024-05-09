@@ -28,7 +28,10 @@ const SpeedSlider: FunctionComponent<SpeedSliderProps> = () => {
         />
         <div className="flex justify-between">
           {Array.from({ length: 5 }, (_, index) => (
-            <div className={speed >= index + 1 ? "text-[#d54f88]" : ""}>
+            <div
+              key={index}
+              className={speed >= index + 1 ? "text-[#d54f88]" : ""}
+            >
               {index + 1}x
             </div>
           ))}
